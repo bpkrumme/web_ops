@@ -1,0 +1,17 @@
+---
+ansible-navigator:
+  logging:
+    level: debug
+    append: false
+    file: $PWD/.logs/ansible-navigator.log
+
+  playbook-artifact:
+    enable: true
+    save-as: $PWD/.logs/{playbook_name}-artifact-{time_stamp}.json
+
+  execution-environment:
+    container-engine: auto
+    enabled: true
+    pull:
+      policy: always
+    image: production-aap.apps.ocp.bk.lab/homelab_ees/web_ee:latest

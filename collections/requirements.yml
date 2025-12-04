@@ -1,0 +1,6 @@
+---
+collections:
+  - name: redhat.eap
+  - name: redhat.jbcs
+  - name: redhat.jws
+  - name: redhat.runtimes_common
