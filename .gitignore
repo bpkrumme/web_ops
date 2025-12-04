@@ -1,3 +1,5 @@
+.ansible
+.logs
 ansible.cfg
 /artifacts
 ansible-navigator.log
