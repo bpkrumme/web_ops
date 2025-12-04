@@ -1,20 +1,20 @@
 ---
 - name: Install web server, insert an index page, verify service is started and that the index page appears
   hosts: "{{ vm_name | default('all') }}"
-  gather_facts: false
+  gather_facts: true
 
   tasks:
     - name: RHEL Apache config
       ansible.builtin.include_role:
         name: webservers_collection
-      when: os is match("rhel.*") or os == "Red Hat BYOL Linux"
+      when: ansible_os_family == "RedHat"
       tags:
         - always
 
     - name: Windows IIS config
       ansible.builtin.include_role:
         name: webservers_collection
-      when: os is match("windows.*") or os is match("2016.*") or os == "Windows"
+      when: ansible_os_family == "Windows"
       tags:
         - always
 
