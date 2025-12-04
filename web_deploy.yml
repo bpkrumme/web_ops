@@ -44,16 +44,3 @@
     - name: Print web address
       ansible.builtin.debug:
         msg: Web address is https://{{ ansible_host }}
-
-    - name: Set stats for the e-mail body and ServiceNow
-      ansible.builtin.set_stats:
-        data:
-          email_body: "{{ fqdn }}: https://{{ ansible_host }} "
-          work_notes: "[code]<a href='https://{{ ansible_host }}'>{{ fqdn }}</a>[/code] "
-          expose_to_cloud_redhat_com_results: "{{ fqdn }}: https://{{ ansible_host }}"
-
-    - name: Set stats for the e-mail subject # noqa run-once[task]
-      ansible.builtin.set_stats:
-        data:
-          email_subject: Ansible VM Web Link
-      run_once: true
