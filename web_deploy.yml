@@ -21,7 +21,7 @@
   post_tasks:
     - name: Check that you can connect to the index page and that the hostname is in the contents
       ansible.builtin.uri:
-        url: http://{{ ansible_host }}
+        url: http://{{ inventory_hostname }}
         validate_certs: false
         return_content: true
       register: this
@@ -32,7 +32,7 @@
 
     - name: Check that you can connect to the index page and that the hostname is in the contents
       ansible.windows.win_uri:
-        url: http://{{ ansible_host }}
+        url: http://{{ inventory_hostname }}
         validate_certs: false
         return_content: true
       register: this
@@ -43,4 +43,4 @@
 
     - name: Print web address
       ansible.builtin.debug:
-        msg: Web address is https://{{ ansible_host }}
+        msg: Web address is https://{{ inventory_hostname }}
