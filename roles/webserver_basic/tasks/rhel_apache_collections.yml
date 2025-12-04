@@ -38,7 +38,7 @@
 
 - name: Copy Cert
   ansible.builtin.copy:
-    src: /certs/shadowman_cert.cer
+    src: /certs/web.bk.lab.crt
     dest: /etc/pki/tls/certs/localhost.crt
     owner: root
     group: root
@@ -46,7 +46,7 @@
 
 - name: Copy Key
   ansible.builtin.copy:
-    src: /certs/shadowman_private.key
+    src: /certs/web.bk.lab.key
     dest: /etc/pki/tls/private/localhost.key
     owner: root
     group: root
