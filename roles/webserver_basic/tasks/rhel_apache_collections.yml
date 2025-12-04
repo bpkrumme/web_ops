@@ -43,6 +43,7 @@
     owner: root
     group: root
     mode: "0644"
+  notify: HTTPD_running
 
 - name: Copy Key
   ansible.builtin.copy:
@@ -51,6 +52,7 @@
     owner: root
     group: root
     mode: "0400"
+  notify: HTTPD_running
 
 - name: Insert Index Page for webpage
   ansible.builtin.template:
